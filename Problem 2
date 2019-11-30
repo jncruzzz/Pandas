@@ -1,0 +1,31 @@
+import pandas as pd
+
+cars=pd.read_csv('.spyder-py3/cars.csv')
+#a.
+cars.ix[:5,0:12:2]
+               Model  cyl   hp     wt  vs  gear
+0          Mazda RX4    6  110  2.620   0     4
+1      Mazda RX4 Wag    6  110  2.875   0     4
+2         Datsun 710    4   93  2.320   1     4
+3     Hornet 4 Drive    6  110  3.215   1     3
+4  Hornet Sportabout    8  175  3.440   0     3
+5            Valiant    6  105  3.460   1     3
+
+#b.
+cars[cars['Model']== 'Mazda RX4']
+       Model   mpg  cyl   disp   hp  drat    wt   qsec  vs  am  gear  carb
+0  Mazda RX4  21.0    6  160.0  110   3.9  2.62  16.46   0   1     4     4
+
+#c.
+cars.loc[23, ['Model','cyl']]
+Model    Camaro Z28
+cyl               8
+
+#d.
+cars.loc[[1, 18, 28], ['Model','cyl', 'gear']] 
+             Model  cyl  gear
+1    Mazda RX4 Wag    6     4
+18     Honda Civic    4     4
+28  Ford Pantera L    8     5
+
+
